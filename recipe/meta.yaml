@@ -1,0 +1,64 @@
+{% set versions = {
+    "2.6.0": "3055",
+    "2.5.0": "3042"
+} %}
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
+
+package:
+  name: {{ environ.get('ANACONDA_PACKAGE', "fastnlo")|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
+
+source:
+  git_url: "https://gitlab.etp.kit.edu/qcd-public/fastNLO"
+  git_rev: {{ versions.get(version, "HEAD") }}
+
+requirements:
+  build:
+    - {{ compiler('gfortran') }}   # GNU Fortran compiler
+    - {{ compiler('c') }}          # GNU C compiler
+    - {{ compiler('cxx') }}        # GNU C++ compiler
+
+    - automake
+    - autoconf
+    - libtool
+    - make
+
+  host:
+    - lhapdf
+    - hoppet
+    - fastjet
+    - qcdnum
+
+    - yoda
+    - root
+    - pythia
+
+    - zlib
+    - python
+    - swig
+
+  run:
+    - lhapdf
+    - hoppet
+    - fastjet
+    - qcdnum
+    - pythia
+
+    - yoda
+    - root
+
+    - python
+
+about:
+  home: "https://fastnlo.hepforge.org"
+  license: "GPL-3.0"
+  summary: "FastNLO: fast pQCD calculations for hadron-induced processes"
+  description: |
+        The fastNLO project provides computer code to create and evaluate fast interpolation tables of pre-computed coefficients in perturbation theory for observables in hadron-induced processes.
+
+extra:
+  recipe-maintainers:
+    - meiyasan
