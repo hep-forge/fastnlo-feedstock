@@ -9,7 +9,7 @@ aclocal
 autoconf
 automake --add-missing
 
-./configure --prefix=$PREFIX
+./configure --prefix=$PREFIX --with-zlib=$PREFIX
 
 make -j$(nproc)
 lhapdf install CT10nlo
