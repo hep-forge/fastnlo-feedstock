@@ -49,6 +49,7 @@ requirements:
 
     - yoda
     - root
+    - zlib
 
     - python
 
