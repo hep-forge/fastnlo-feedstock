@@ -17,9 +17,9 @@ source:
 
 requirements:
   build:
-    - {{ compiler('gfortran') }} 14.*   # GNU Fortran compiler
-    - {{ compiler('c') }} 14.*          # GNU C compiler
-    - {{ compiler('cxx') }} 14.*        # GNU C++ compiler
+    - {{ compiler('gfortran') }}   # GNU Fortran compiler
+    - {{ compiler('c') }}          # GNU C compiler
+    - {{ compiler('cxx') }}        # GNU C++ compiler
 
     - automake
     - autoconf
