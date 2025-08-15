@@ -32,31 +32,28 @@ requirements:
     - make
 
   host:
+    - root
     - lhapdf
     - hoppet
     - hep-forge::fastjet
     - qcdnum
 
     - yoda
-    - root
     - pythia
 
     - zlib
-    - python
     - swig
 
   run:
+    - root
     - lhapdf
     - hoppet
-    - hep-forge::fastjet
+    - fastjet
     - qcdnum
     - pythia
 
     - yoda
-    - root
     - zlib
-
-    - python
 
 about:
   home: "https://fastnlo.hepforge.org"
