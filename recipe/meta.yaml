@@ -34,7 +34,7 @@ requirements:
   host:
     - lhapdf
     - hoppet
-    - fastjet
+    - hep-forge::fastjet
     - qcdnum
 
     - yoda
@@ -48,7 +48,7 @@ requirements:
   run:
     - lhapdf
     - hoppet
-    - fastjet
+    - hep-forge::fastjet
     - qcdnum
     - pythia
 
