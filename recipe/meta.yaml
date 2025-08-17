@@ -32,7 +32,7 @@ requirements:
     - make
 
   host:
-    - root=={{ root }}.*
+    - root {{ root }}.*
     - lhapdf
     - hoppet
     - fastjet
@@ -45,7 +45,7 @@ requirements:
     - swig
 
   run:
-    - root=={{ root }}.*
+    - root {{ root }}.*
     - lhapdf
     - hoppet
     - fastjet
