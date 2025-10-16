@@ -1,6 +1,5 @@
 root:
   - 6.32
-  - 6.34
 
 packages:
   - root
