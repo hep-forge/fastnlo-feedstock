@@ -1,5 +1,6 @@
 root:
   - 6.32
+#  - 6.34 # not working: tests failed
 
 packages:
   - root
