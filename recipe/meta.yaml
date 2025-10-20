@@ -23,6 +23,7 @@ source:
 requirements:
   build:
     - root {{ root }}.*
+    - root-guard
 
     - automake
     - autoconf
@@ -31,6 +32,7 @@ requirements:
 
   host:
     - root {{ root }}.*
+    - root-guard
     - lhapdf
     - hoppet
     - fastjet
@@ -44,6 +46,8 @@ requirements:
 
   run:
     - root {{ root }}.*
+    - root-guard
+
     - lhapdf
     - hoppet
     - fastjet
