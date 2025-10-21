@@ -23,6 +23,7 @@ source:
 requirements:
   build:
     - root {{ root }}.*
+    - root-guard
 
     - automake
     - autoconf
@@ -31,24 +32,31 @@ requirements:
 
   host:
     - root {{ root }}.*
+    - root-guard
     - lhapdf
     - hoppet
     - fastjet
     - qcdnum
 
-    - yoda<2
+    - yoda <2
 
     - zlib
     - swig
 
   run:
     - root {{ root }}.*
+    - root-guard
+
     - lhapdf
     - hoppet
     - fastjet
     - qcdnum
 
+<<<<<<< HEAD
     - yoda<2
+=======
+    - yoda <2
+>>>>>>> 9d4730b8ed858d393d1cf8dc789d844f3518759f
     - zlib
 
 about:
