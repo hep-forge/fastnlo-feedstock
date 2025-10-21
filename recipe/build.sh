@@ -3,12 +3,7 @@
 cd ./v*/toolkit
 export PYTHONPATH=$SP_DIR
 
-libtoolize
-autoheader
-
-aclocal
-autoconf
-automake --add-missing
+autoreconf -vfi
 
 ./configure --enable-pyext --enable-fortranext \
             --prefix=$PREFIX --with-zlib=$PREFIX --with-root=$PREFIX --with-lhapdf=$PREFIX \
