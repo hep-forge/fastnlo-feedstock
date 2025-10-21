@@ -3,6 +3,7 @@
 cd ./v*/toolkit
 export PYTHONPATH=$SP_DIR
 
+echo 'AUTOMAKE_OPTIONS = no-dependencies' >> Makefile.am
 autoreconf -vfi
 
 ./configure --enable-pyext --enable-fortranext \
