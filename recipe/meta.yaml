@@ -38,7 +38,7 @@ requirements:
     - fastjet
     - qcdnum
 
-    - yoda
+    - yoda <2
 
     - zlib
     - swig
@@ -52,7 +52,7 @@ requirements:
     - fastjet
     - qcdnum
 
-    - yoda
+    - yoda <2
     - zlib
 
 about:
