@@ -52,11 +52,7 @@ requirements:
     - fastjet
     - qcdnum
 
-<<<<<<< HEAD
-    - yoda<2
-=======
     - yoda <2
->>>>>>> 9d4730b8ed858d393d1cf8dc789d844f3518759f
     - zlib
 
 about:
