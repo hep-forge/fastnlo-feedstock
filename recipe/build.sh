@@ -3,11 +3,11 @@
 cd ./v*/toolkit
 export PYTHONPATH=$SP_DIR
 
-# libtoolize
-# autoheader
+libtoolize
+autoheader
 
-# aclocal
-# autoconf
+aclocal
+autoconf
 # automake --add-missing
 
 ./configure --enable-pyext --enable-fortranext \
