@@ -5,8 +5,8 @@ export PYTHONPATH=$SP_DIR
 
 autoreconf -vfi
 
-./configure --prefix=$PREFIX #--enable-pyext --enable-fortranext \
-            # --with-zlib=$PREFIX --with-root=$PREFIX --with-lhapdf=$PREFIX \
+./configure --prefix=$PREFIX --with-zlib=$PREFIX #--enable-pyext --enable-fortranext \
+            # --with-root=$PREFIX --with-lhapdf=$PREFIX \
             # --with-yoda=$PREFIX --with-qcdnum=$PREFIX --with-fastjet=$PREFIX --with-hoppet=$PREFIX \
             # --disable-dependency-tracking
 
