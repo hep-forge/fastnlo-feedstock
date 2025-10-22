@@ -7,7 +7,7 @@ autoreconf -vfi
 
 ./configure --prefix=$PREFIX --with-zlib=$PREFIX --enable-fortranext \
             --with-root=$PREFIX --with-lhapdf=$PREFIX \
-            --with-yoda=$PREFIX --with-qcdnum=$PREFIX --with-fastjet=$PREFIX --with-hoppet=$PREFIX
+            --with-yoda=$PREFIX --with-fastjet=$PREFIX --with-hoppet=$PREFIX
 
 make -j$(nproc)
 lhapdf install CT10nlo
