@@ -16,7 +16,8 @@ done
             --with-root=$PREFIX --with-lhapdf=$PREFIX \
             --with-yoda=$PREFIX --with-fastjet=$PREFIX --with-hoppet=$PREFIX
 
-make -j$(nproc)
+NPROC=$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+make -j$NPROC
 lhapdf install CT10nlo
 
 make check
