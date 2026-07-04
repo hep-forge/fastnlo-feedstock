@@ -1,6 +1,8 @@
+# 6.36 dropped: 6.36.04 was only ever published for linux-64 (no
+# linux-aarch64 build), so this variant slot was unconditionally
+# unsatisfiable on arm64.
 root:
   - 6.34
-  - 6.36
 
 packages:
   - root
