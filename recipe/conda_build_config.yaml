@@ -1,3 +1,12 @@
+# python pinned to match ROOT's own build: hep-forge's root packages
+# are published for one python per version family (6.34/6.36/6.38 ->
+# 3.12, 6.32 -> 3.10); without this pin, conda-build tries conda-forge's
+# global default python matrix (3.9-3.13), and any slot ROOT wasn't
+# built for is unsatisfiable under strict channel priority (it won't
+# fall back to conda-forge's own differently-versioned root package).
+python:
+  - "3.12"
+
 # 6.36 dropped: 6.36.04 was only ever published for linux-64 (no
 # linux-aarch64 build), so this variant slot was unconditionally
 # unsatisfiable on arm64.
