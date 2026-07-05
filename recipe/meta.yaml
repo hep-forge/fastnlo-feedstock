@@ -37,7 +37,7 @@ requirements:
     - root {{ root }}.*
     - root-guard
     - lhapdf
-    - hoppet
+    - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
     - qcdnum
 
@@ -51,7 +51,7 @@ requirements:
     - root-guard
 
     - lhapdf
-    - hoppet
+    - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
     - qcdnum
 
