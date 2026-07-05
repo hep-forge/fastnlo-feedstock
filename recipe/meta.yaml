@@ -41,7 +41,7 @@ requirements:
     - fastjet
     - qcdnum
 
-    - yoda <2
+    - yoda ==1.9.9              # the only yoda<2 build published for linux-aarch64
 
     - zlib
     - swig
@@ -55,7 +55,7 @@ requirements:
     - fastjet
     - qcdnum
 
-    - yoda <2
+    - yoda ==1.9.9              # the only yoda<2 build published for linux-aarch64
     - zlib
 
 about:
