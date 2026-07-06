@@ -16,7 +16,7 @@ FastNLO: fast pQCD calculations for hadron-induced processes
 | Architecture | Latest published |
 |--------------|------------------|
 | linux-amd64 (`linux-64`) | ✅ `2.6.0` |
-| linux-arm64 (`linux-aarch64`) | ❌ not published |
+| linux-arm64 (`linux-aarch64`) | ✅ `2.6.0` |
 
 _As of the last feedstock render; the badges above are live._
 
