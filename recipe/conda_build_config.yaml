@@ -9,9 +9,12 @@ python:
 
 # 6.36 dropped: 6.36.04 was only ever published for linux-64 (no
 # linux-aarch64 build), so this variant slot was unconditionally
-# unsatisfiable on arm64.
+# unsatisfiable on arm64. 6.34 dropped in turn: yoda==1.9.9 (pinned in
+# meta.yaml) now also publishes against root638 on both arches, so this
+# moves onto the same line as the rest of the channel's non-legacy
+# packages -- lets it coexist with root-plus/escalade/etc. in one env.
 root:
-  - 6.34
+  - 6.38
 
 packages:
   - root
