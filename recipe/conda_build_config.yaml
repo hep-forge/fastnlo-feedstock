@@ -9,9 +9,10 @@ python:
 
 # 6.36 dropped: 6.36.04 was only ever published for linux-64 (no
 # linux-aarch64 build), so this variant slot was unconditionally
-# unsatisfiable on arm64.
+# unsatisfiable on arm64. 6.34 dropped in turn once root-feedstock's
+# rolling window moved past it (only 6.32/6.38 remain published).
 root:
-  - 6.34
+  - 6.38
 
 packages:
   - root
