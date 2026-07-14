@@ -32,6 +32,7 @@ requirements:
     - make
     - m4
     - gnuconfig
+    - sed        # build.sh's `sed -i` needs GNU semantics; BSD sed on macOS differs
 
   host:
     - root {{ root }}.*
