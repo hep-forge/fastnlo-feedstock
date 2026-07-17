@@ -11,6 +11,14 @@
 build:
   number: 0
   string: "root{{ root.replace('.', '') }}"
+  # No ROOT dictionary generation currently (the toolkit's rootcint usage
+  # lives only in an unbuilt legacy previous/v2.0 subtree), but this
+  # links against ROOT and could grow one -- pre-emptive protection
+  # against conda-build's prefix-relocation corrupting a future
+  # lib/*.pcm, matching root-feedstock/root-plus-feedstock's fix for the
+  # identical artifact.
+  ignore_prefix_files:
+    - lib/*.pcm
 
 package:
   name: {{ environ.get('ANACONDA_PACKAGE', "fastnlo")|string|lower }}
