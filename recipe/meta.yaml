@@ -42,8 +42,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ stdlib('c') }}
     - root {{ root }}.*
-    - root-guard
-
+    - root-guard  # [linux]
     - automake
     - autoconf
     - libtool
@@ -55,7 +54,7 @@ requirements:
 
   host:
     - root {{ root }}.*
-    - root-guard
+    - root-guard  # [linux]
     - lhapdf
     - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
@@ -68,8 +67,7 @@ requirements:
 
   run:
     - root {{ root }}.*
-    - root-guard
-
+    - root-guard  # [linux]
     - lhapdf
     - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
