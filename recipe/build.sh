@@ -32,7 +32,14 @@ for f in config.sub config.guess; do
   find . -name "$f" -exec cp "$BUILD_PREFIX/share/gnuconfig/$f" {} \;
 done
 
-./configure --prefix=$PREFIX --with-zlib=$PREFIX --enable-fortranext \
+# macOS: config.status failed "bootstrapping makefile fragments for automatic
+# dependency tracking"; a one-shot package build does not need it.
+EXTRA_ARGS=()
+if [[ "$(uname)" == "Darwin" ]]; then
+  EXTRA_ARGS+=(--disable-dependency-tracking)
+fi
+
+./configure "${EXTRA_ARGS[@]}" --prefix=$PREFIX --with-zlib=$PREFIX --enable-fortranext \
             --with-root=$PREFIX --with-lhapdf=$PREFIX \
             --with-yoda=$PREFIX --with-fastjet=$PREFIX --with-hoppet=$PREFIX
 
