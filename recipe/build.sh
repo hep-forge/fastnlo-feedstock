@@ -24,6 +24,14 @@ fi
 # and every fnlo-tk-* tool failing at runtime with a symbol lookup error.
 sed -i 's/lhapdf-config --ldflags/lhapdf-config --libs/' fastnlotoolkit/Makefile.am
 
+# configure.ac asks `lhapdf-config --pdfsets-path`, which LHAPDF 6 does not
+# know: it prints its help text instead, configure substitutes that into
+# LHAPDFSETPATH and the multi-line value breaks the Makefile ("missing
+# separator"). --datadir is the PDF-set directory in LHAPDF 6.
+sed -i.bak 's/\$LHAPDFBIN --pdfsets-path/$LHAPDFBIN --datadir/' configure.ac
+rm -f configure.ac.bak
+grep -q 'LHAPDFBIN --datadir' configure.ac
+
 autoreconf -vfi
 
 # Bundled/regenerated config.sub/config.guess predate aarch64 triplets --
