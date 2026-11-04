@@ -37,7 +37,7 @@ grep -q 'LHAPDFBIN --datadir' configure.ac
 # as a lone "-L" and libtool refused the fortranext link. Ask conda's $FC.
 sed -i.bak 's/sh -c "gfortran -print-file-name/sh -c "${FC} -print-file-name/' configure.ac
 rm -f configure.ac.bak
-grep -q 'sh -c "${FC} -print-file-name' configure.ac
+grep -qF 'sh -c "${FC} -print-file-name' configure.ac
 
 autoreconf -vfi
 
