@@ -32,6 +32,13 @@ sed -i.bak 's/\$LHAPDFBIN --pdfsets-path/$LHAPDFBIN --datadir/' configure.ac
 rm -f configure.ac.bak
 grep -q 'LHAPDFBIN --datadir' configure.ac
 
+# configure.ac finds libgfortran with a bare `gfortran -print-file-name`; on
+# macOS conda's compiler only exists target-prefixed, so FRTLDFLAGS came out
+# as a lone "-L" and libtool refused the fortranext link. Ask conda's $FC.
+sed -i.bak 's/sh -c "gfortran -print-file-name/sh -c "${FC} -print-file-name/' configure.ac
+rm -f configure.ac.bak
+grep -q 'sh -c "${FC} -print-file-name' configure.ac
+
 autoreconf -vfi
 
 # Bundled/regenerated config.sub/config.guess predate aarch64 triplets --
