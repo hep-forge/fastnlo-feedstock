@@ -41,8 +41,8 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - {{ stdlib('c') }}
-    - root {{ root }}.*
-    - root-guard
+    - root_base {{ root }}.* cxx{{ root_cxx_standard }}*
+    - python
     - automake
     - autoconf
     - libtool
@@ -53,8 +53,8 @@ requirements:
     - sed        # build.sh's `sed -i` needs GNU semantics; BSD sed on macOS differs
 
   host:
-    - root {{ root }}.*
-    - root-guard
+    - root_base {{ root }}.* cxx{{ root_cxx_standard }}*
+    - python
     - lhapdf
     - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
@@ -66,8 +66,7 @@ requirements:
     - swig
 
   run:
-    - root {{ root }}.*
-    - root-guard
+    - {{ pin_compatible('root_base', exact=True) }}
     - lhapdf
     - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastjet
